@@ -73,6 +73,17 @@ console.log("Elasped minutes since January 1,1970:",milli);
 
 // ques 7 //
 // ans 7 //
+now = new Date()
+let currentHour = now.getHours()
+console.log(currentHour);
+
+if(currentHour <=11){
+    console.log("It's AM");
+    
+}else if (currentHour >=12 && currentHour <=23){
+    console.log("It's PM");
+    
+}
 
 
 
@@ -110,27 +121,53 @@ console.log(`On refrence date ${end}${totalSinceBeg} seconds had passed since th
 
 // ques 11 //
 // ans 11 //
-// let currentTime = new Date()
-// console.log(currentTime);
+let currentTime = new Date()
+console.log(currentTime);
 
-// let hourAgo = new Date("19 nov 2025 22:15:40 ")
-// console.log("1 hour ago the time was ",hourAgo);
+let hourAgo = new Date(currentTime)
 
+hourAgo.setHours(hourAgo.getHours()-1)
+console.log("1 hour ago the time was --->",hourAgo);
+
+// ques 12 //
+// ans 12 //
+currentTime = new Date()
+console.log(currentTime);
+let yearsAgo = new Date(currentTime)
+yearsAgo.setFullYear(yearsAgo.getFullYear()-100)
+console.log("100 years ago the year  was --->",yearsAgo);
 
 // ques 13 //
 // ans 13 //
-let userAge = 25
-now = new Date()
-let year =Math.floor(now.getTime()/(1000*60*60*24*365))
-console.log(year);
-let birthYear = year - userAge
-birthYear = 1970 + birthYear
-console.log("Your birth year is",birthYear);
+// let userAge = prompt("Enter your Age")
+// let currentYear = new Date().getFullYear()
+// // console.log(currentYear);
+// let birthYear = currentYear - userAge
+// console.log("Your birth year is :",birthYear);
 
+// ques 14 //
+// ans 14 //
+month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+let cusName = "Muhammad Ismail"
+console.log("Customer Name --->",cusName);
 
+let monthCurr = new Date().getMonth()
+console.log("Current Month --->",month[monthCurr]);
 
+let noOfUnits = 410
+console.log("Number of units --->",noOfUnits);
 
+let chargesPerUnit = 16
+console.log("Charges per  units --->",chargesPerUnit);
 
+let netPayAmount = noOfUnits * chargesPerUnit
+console.log("Net payable amount (within due date) --->",netPayAmount);
+
+let latePaySurcharge = 350
+console.log("late Payment surcharge --->",latePaySurcharge);
+
+let grossAmount = netPayAmount + latePaySurcharge
+console.log("Gross payable amount (after due date) --->",grossAmount);
 
 
 
